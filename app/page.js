@@ -1,6 +1,5 @@
 import ScrollStory from "@/components/ScrollStory";
 import HeroReveal from "@/components/HeroReveal";
-import BannerImage from "@/components/BannerImage";
 import ObjectScrollSection from "@/components/ObjectScrollSection";
 import SiteHeader from "@/components/SiteHeader";
 
@@ -10,8 +9,6 @@ export default function Home() {
       <SiteHeader />
 
       <HeroReveal />
-
-      <BannerImage />
 
       <ObjectScrollSection />
 
