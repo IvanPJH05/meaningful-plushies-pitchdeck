@@ -7,29 +7,29 @@ const objects = [
   {
     id: "dino-plush",
     type: "image",
-    src: assetUrl("/assets/object-1.jpeg"),
+    src: assetUrl("/assets/meaningful-object-1.png"),
     alt: "Green Meaningful Plushies dinosaur plush",
-    scrollWeight: 1.05,
+    scrollWeight: 1.45,
   },
   {
     id: "speaker-animation",
     type: "video",
-    src: assetUrl("/assets/speaker-animation.mp4"),
+    src: assetUrl("/assets/speaker-animation-v2.mp4"),
     alt: "Speaker animation",
-    fallbackDuration: 3.02,
+    fallbackDuration: 6,
   },
   {
     id: "nfc-card-animation",
     type: "video",
-    src: assetUrl("/assets/nfc-card-animation.mp4"),
+    src: assetUrl("/assets/nfc-animation-2.mp4"),
     alt: "NFC card animation",
-    fallbackDuration: 4.27,
+    fallbackDuration: 5,
   },
 ];
 
-const VIDEO_ENTER_WEIGHT = 0.72;
-const VIDEO_EXIT_WEIGHT = 0.72;
-const VIDEO_SECONDS_TO_SCROLL_WEIGHT = 0.78;
+const VIDEO_ENTER_WEIGHT = 0.9;
+const VIDEO_EXIT_WEIGHT = 0.9;
+const VIDEO_SECONDS_TO_SCROLL_WEIGHT = 1.45;
 
 function clamp(value, min = 0, max = 1) {
   return Math.min(Math.max(value, min), max);
@@ -82,6 +82,8 @@ export default function ObjectScrollSection() {
       const travel = Math.max(rect.height - window.innerHeight, 1);
       const progress = clamp(-rect.top / travel);
       const timeline = getTimeline();
+      const bgFade = clamp(progress / 0.16);
+      section.style.setProperty("--object-bg-opacity", (1 - bgFade).toFixed(4));
 
       objects.forEach((object, index) => {
         const node = objectRefs.current[index];
@@ -95,11 +97,11 @@ export default function ObjectScrollSection() {
         let scale = 1;
 
         if (object.type === "image") {
-          const travelY = 84 - local * 168;
+          const travelY = 100 - local * 188;
           const distanceFromCenter = Math.abs(local - 0.5) * 2;
 
           y = travelY;
-          opacity = active ? clamp((1 - distanceFromCenter) * 1.8) : 0;
+          opacity = active ? clamp((1 - distanceFromCenter) * 1.55) : 0;
           scale = 0.96 + (1 - distanceFromCenter) * 0.04;
         } else {
           const duration = durationsRef.current[index] || object.fallbackDuration || 3;
@@ -170,7 +172,9 @@ export default function ObjectScrollSection() {
       aria-label="Meaningful Plushies object showcase"
     >
       <div className="object-scroll-sticky">
-        <div className="object-scroll-background" />
+        <div className="object-scroll-background">
+          <img src={assetUrl("/assets/home-2.png")} alt="" />
+        </div>
         <div className="object-stage">
           {objects.map((object, index) => (
             <figure
