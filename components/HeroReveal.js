@@ -59,6 +59,7 @@ export default function HeroReveal() {
 
         <a className="reveal-logo-button" href="#objects" onClick={revealOnClick} aria-label="Reveal Meaningful Plushies">
           <img src={assetUrl("/assets/logo.png")} alt="Meaningful Plushies" />
+          <span className="sr-only">Reveal Meaningful Plushies</span>
         </a>
       </div>
     </section>
