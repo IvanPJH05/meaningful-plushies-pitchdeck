@@ -40,7 +40,9 @@ export default function HeroReveal() {
     };
   }, []);
 
-  function revealOnClick() {
+  function revealOnClick(event) {
+    event.preventDefault();
+
     const section = sectionRef.current;
     if (!section) return;
 
@@ -55,9 +57,9 @@ export default function HeroReveal() {
         <img className="reveal-bg reveal-bg-one" src={assetUrl("/assets/home-1.png")} alt="" />
         <div className="reveal-soft-overlay" />
 
-        <button className="reveal-logo-button" type="button" onClick={revealOnClick} aria-label="Reveal Meaningful Plushies">
+        <a className="reveal-logo-button" href="#objects" onClick={revealOnClick} aria-label="Reveal Meaningful Plushies">
           <img src={assetUrl("/assets/logo.png")} alt="Meaningful Plushies" />
-        </button>
+        </a>
       </div>
     </section>
   );
