@@ -1,0 +1,1 @@
+{"name":"meaningful-plushies-scroll-home","version":"0.1.0","private":true,"scripts":{"dev":"next dev","build":"next build","start":"next start"},"dependencies":{"gsap":"^3.12.5","next":"^15.1.4","react":"^19.0.0","react-dom":"^19.0.0"},"devDependencies":{"eslint":"^9.17.0","eslint-config-next":"^15.1.4"}}
