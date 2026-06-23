@@ -216,8 +216,14 @@ export default function HeroReveal() {
   return (
     <section ref={sectionRef} id="top" className="hero-reveal" aria-label="Meaningful Plushies home reveal">
       <div className="hero-reveal-sticky">
-        <img className="reveal-bg reveal-bg-two" src={assetUrl("/assets/home-2.png")} alt="" />
-        <img className="reveal-bg reveal-bg-one" src={assetUrl("/assets/home-1.png")} alt="" />
+        <picture>
+          <source media="(max-width: 920px)" srcSet={assetUrl("/assets/home-2-mobile.png")} />
+          <img className="reveal-bg reveal-bg-two" src={assetUrl("/assets/home-2.png")} alt="" />
+        </picture>
+        <picture>
+          <source media="(max-width: 920px)" srcSet={assetUrl("/assets/home-1-mobile.png")} />
+          <img className="reveal-bg reveal-bg-one" src={assetUrl("/assets/home-1.png")} alt="" />
+        </picture>
         <div className="reveal-next-object">
           {characterBeats.map((character) => (
             <img
