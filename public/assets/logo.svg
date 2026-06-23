@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 220" role="img" aria-labelledby="title">
+  <title id="title">Meaningful Plushies</title>
+  <rect width="900" height="220" rx="44" fill="#ffffff"/>
+  <g fill="#2d4652" font-family="Arial Rounded MT Bold, Arial, sans-serif" font-weight="900">
+    <text x="190" y="95" font-size="52">Meaningful</text>
+    <text x="190" y="155" font-size="52">Plushies</text>
+  </g>
+  <g transform="translate(54 42)">
+    <ellipse cx="58" cy="78" rx="52" ry="58" fill="#f08da0"/>
+    <circle cx="40" cy="66" r="9" fill="#2d4652"/>
+    <circle cx="76" cy="66" r="9" fill="#2d4652"/>
+    <path d="M47 92c12 12 25 12 37 0" fill="none" stroke="#2d4652" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="25" cy="28" r="22" fill="#c8edfb"/>
+    <circle cx="91" cy="28" r="22" fill="#c8edfb"/>
+    <path d="M28 133c24 18 60 18 84 0" fill="none" stroke="#8fd4bd" stroke-width="14" stroke-linecap="round"/>
+  </g>
+</svg>
