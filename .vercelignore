@@ -1,0 +1,8 @@
+.tools
+node_modules
+.next
+tools
+index.html
+script.js
+styles.css
+*.log

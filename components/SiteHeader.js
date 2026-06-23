@@ -5,6 +5,22 @@ import { assetUrl } from "@/lib/assets";
 
 export default function SiteHeader() {
   const [isHidden, setIsHidden] = useState(false);
+  const whatsAppJoinUrl = "https://wa.me/60122260106";
+
+  function scrollToFeatureStart(event) {
+    event.preventDefault();
+
+    const section = document.getElementById("objects");
+    if (!section) return;
+
+    const travel = Math.max(section.offsetHeight - window.innerHeight, 1);
+    const targetTop = section.offsetTop + travel * 0.18;
+
+    window.scrollTo({
+      top: targetTop,
+      behavior: "smooth",
+    });
+  }
 
   useEffect(() => {
     let lastY = window.scrollY;
@@ -42,11 +58,12 @@ export default function SiteHeader() {
         <span>Influencer Studio</span>
       </a>
       <nav className="nav-links" aria-label="Main navigation">
-        <a href="#objects">Objects</a>
-        <a href="#proof">Proof</a>
-        <a href="#contact">Start</a>
+        <a href="#objects" onClick={scrollToFeatureStart}>Features</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#about-us">About us</a>
+        <a href="#creator-program">Vip Creator</a>
       </nav>
-      <a className="nav-cta" href="#contact">Book intro</a>
+      <a className="nav-cta" href={whatsAppJoinUrl} rel="noreferrer" target="_blank">Join us</a>
     </header>
   );
 }
