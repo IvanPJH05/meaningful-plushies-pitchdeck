@@ -83,7 +83,9 @@ export default function ObjectScrollSection() {
       const progress = clamp(-rect.top / travel);
       const timeline = getTimeline();
       const bgFade = clamp(progress / 0.16);
+      const transitionOpacity = clamp((progress - 0.94) / 0.06);
       section.style.setProperty("--object-bg-opacity", (1 - bgFade).toFixed(4));
+      section.style.setProperty("--object-transition-opacity", transitionOpacity.toFixed(4));
 
       objects.forEach((object, index) => {
         const node = objectRefs.current[index];
@@ -202,6 +204,7 @@ export default function ObjectScrollSection() {
             </figure>
           ))}
         </div>
+        <div className="object-exit-transition" aria-hidden="true" />
       </div>
     </section>
   );
