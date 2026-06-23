@@ -3512,6 +3512,224 @@ h3 {
   }
 }
 
+@media (max-width: 920px) {
+  .hero-reveal-sticky,
+  .object-scroll-sticky {
+    background: #ffffff;
+  }
+
+  .reveal-bg {
+    transform: none;
+  }
+
+  .character-copy {
+    align-items: stretch;
+    grid-template-rows: minmax(116px, 23svh) minmax(220px, 1fr) minmax(116px, 23svh);
+    padding: max(76px, calc(env(safe-area-inset-top) + 64px)) 22px max(34px, env(safe-area-inset-bottom));
+  }
+
+  .character-copy h2,
+  .character-copy p {
+    background: rgba(255, 255, 255, 0.78);
+    border: 1px solid rgba(120, 146, 160, 0.16);
+    border-radius: 28px;
+    box-shadow: 0 18px 54px rgba(63, 86, 99, 0.08);
+    display: grid;
+    max-width: min(88vw, 520px);
+    min-height: 104px;
+    padding: 16px 18px 14px;
+    place-items: center;
+    width: min(88vw, 520px);
+  }
+
+  .character-copy h2 {
+    align-self: end;
+    font-size: clamp(3rem, 17vw, 5.5rem);
+    grid-row: 1;
+    line-height: 0.9;
+    margin: 0;
+  }
+
+  .character-copy p {
+    align-self: start;
+    font-size: clamp(1.65rem, 8vw, 2.75rem);
+    grid-column: 1;
+    grid-row: 3;
+    line-height: 0.96;
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  .character-copy p span {
+    white-space: normal;
+  }
+
+  .character-copy-tootsie p,
+  .character-copy-billy p {
+    font-size: clamp(1.55rem, 7.5vw, 2.55rem);
+  }
+
+  .reveal-next-object {
+    height: min(42svh, 82vw);
+    top: 50%;
+    width: min(82vw, 42svh);
+  }
+
+  .scroll-object {
+    background: transparent;
+    height: 100svh;
+    width: 100%;
+  }
+
+  .scroll-object:has(.speaker-feature) .scroll-object-media {
+    max-height: min(30svh, 58vw);
+    max-width: min(58vw, 30svh);
+    transform: translateY(-1svh);
+  }
+
+  .speaker-feature {
+    align-content: center;
+    gap: clamp(18px, 4svh, 30px);
+    grid-template-rows: minmax(154px, 28svh) minmax(170px, 24svh) minmax(138px, 23svh);
+    height: calc(100svh - 74px);
+    padding: max(68px, env(safe-area-inset-top)) 0 max(28px, env(safe-area-inset-bottom));
+    width: min(90vw, 520px);
+  }
+
+  .speaker-capacity {
+    align-self: end;
+    gap: 12px;
+    justify-items: center;
+  }
+
+  .speaker-capacity > span {
+    font-size: clamp(1.75rem, 8.5vw, 2.85rem);
+    line-height: 0.95;
+    text-align: center;
+  }
+
+  .capacity-selector {
+    min-height: 156px;
+    width: min(74vw, 310px);
+  }
+
+  .capacity-option {
+    height: 52px;
+    left: 50%;
+    top: 52px;
+    width: min(70vw, 292px);
+  }
+
+  .speaker-copy {
+    align-self: start;
+    background: rgba(255, 255, 255, 0.78);
+    border: 1px solid rgba(120, 146, 160, 0.16);
+    border-radius: 28px;
+    box-shadow: 0 18px 54px rgba(63, 86, 99, 0.08);
+    display: grid;
+    min-height: 126px;
+    padding: 16px 18px 14px;
+    place-items: center;
+    transform: translateY(calc(var(--speaker-copy-y) + 18svh));
+    width: min(88vw, 520px);
+  }
+
+  .speaker-copy span {
+    font-size: clamp(2.25rem, 12vw, 4.25rem);
+    line-height: 0.9;
+    white-space: normal;
+  }
+
+  .scroll-object:has(.nfc-info) .scroll-object-media {
+    max-height: min(28svh, 68vw);
+    max-width: min(68vw, 28svh);
+    transform: translateY(6svh);
+  }
+
+  .nfc-info {
+    align-content: start;
+    gap: 14px;
+    grid-template-rows: minmax(245px, 38svh) minmax(86px, auto) 1fr;
+    height: calc(100svh - 68px);
+    padding-top: max(70px, env(safe-area-inset-top));
+    width: min(92vw, 560px);
+  }
+
+  .nfc-copy-stack {
+    align-self: start;
+    background: rgba(255, 255, 255, 0.82);
+    border: 1px solid rgba(120, 146, 160, 0.16);
+    border-radius: 28px;
+    box-shadow: 0 18px 54px rgba(63, 86, 99, 0.08);
+    gap: clamp(18px, 3.4svh, 30px);
+    min-height: 232px;
+    padding: 20px 14px;
+    place-content: center;
+    width: 100%;
+  }
+
+  .nfc-info-panel {
+    gap: 8px;
+  }
+
+  .nfc-info-panel h3 {
+    font-size: clamp(2rem, 10vw, 3.45rem);
+    line-height: 0.96;
+  }
+
+  .nfc-info-panel p {
+    font-size: clamp(1rem, 4.8vw, 1.35rem);
+    line-height: 1.12;
+    text-wrap: balance;
+  }
+
+  .nfc-certificate {
+    align-self: start;
+    gap: 8px;
+    height: auto;
+    margin-top: min(6svh, 40px);
+    width: 100%;
+  }
+
+  .nfc-certificate h3 {
+    font-size: clamp(1rem, 4.5vw, 1.45rem);
+    line-height: 0.98;
+  }
+
+  .nfc-click-pills {
+    --nfc-pill-active-height: 72px;
+    --nfc-pill-rest-height: 52px;
+    gap: 8px;
+  }
+
+  .nfc-click-pill {
+    padding: 7px 14px;
+  }
+
+  .nfc-click-pill span {
+    font-size: clamp(0.9rem, 4.2vw, 1.08rem);
+  }
+
+  .nfc-click-pill strong {
+    font-size: clamp(0.98rem, 4.5vw, 1.22rem);
+  }
+
+  .reviews-slider-arrow-left {
+    left: 0;
+  }
+
+  .reviews-slider-arrow-right {
+    right: 0;
+  }
+
+  .about-us-inner,
+  .creator-program-inner,
+  .creator-program-details {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
 @media (max-width: 540px) {
   .brand {
     font-size: 0.86rem;
