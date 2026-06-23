@@ -1,5 +1,4 @@
 import './globals.css';
-import './transition-overrides.css';
 
 export const metadata = {
   title: 'Meaningful Plushies | Creator Acquisition',
