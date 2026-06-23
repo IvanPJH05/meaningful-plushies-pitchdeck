@@ -9,6 +9,9 @@ gsap.registerPlugin(ScrollTrigger);
 
 const clamp = (value, min = 0, max = 1) => Math.min(Math.max(value, min), max);
 const toGsapVars = (state) => ({ x: state.x, y: state.y, scale: state.scale, rotate: state.rotate, autoAlpha: state.opacity });
+const FADE_UP_OFFSET = 72;
+const getFadeUpFrom = (state) => ({ x: state.x, y: state.y + FADE_UP_OFFSET, scale: 0.96, rotate: state.rotate, autoAlpha: 0 });
+const getFadeUpTo = (state) => ({ x: state.x, y: state.y - FADE_UP_OFFSET, scale: 0.98, rotate: state.rotate, autoAlpha: 0 });
 
 function useMediaPreference(queryText) {
   const [matches, setMatches] = useState(false);
@@ -100,8 +103,8 @@ export default function ScrollStory({ items = storyItems, height = '680vh' }) {
         if (!node) return;
         const enterDuration = (item.end - item.start) * 0.5;
         const exitStart = item.start + enterDuration;
-        timeline.fromTo(node, toGsapVars(item.animation.from), { ...toGsapVars(item.animation.focus), duration: enterDuration }, item.start);
-        timeline.to(node, { ...toGsapVars(item.animation.to), duration: enterDuration }, exitStart);
+        timeline.fromTo(node, getFadeUpFrom(item.animation.focus), { ...toGsapVars(item.animation.focus), duration: enterDuration }, item.start);
+        timeline.to(node, { ...getFadeUpTo(item.animation.focus), duration: enterDuration }, exitStart);
       });
     }, sectionRef);
 
