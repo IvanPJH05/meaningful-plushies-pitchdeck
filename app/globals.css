@@ -3513,6 +3513,15 @@ h3 {
 }
 
 @media (max-width: 920px) {
+  .hero-reveal {
+    position: relative;
+    z-index: 8;
+  }
+
+  .object-scroll-section {
+    z-index: 7;
+  }
+
   .hero-reveal-sticky,
   .object-scroll-sticky {
     background: #ffffff;
