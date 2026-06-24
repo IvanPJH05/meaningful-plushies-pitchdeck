@@ -200,6 +200,7 @@ export default function ObjectScrollSection() {
     };
 
     const update = (progress) => {
+      const isMobile = window.matchMedia("(max-width: 920px)").matches;
       const totalWeight =
         objects.reduce((sum, object, index) => sum + getObjectWeight(object, index), 0) -
         OBJECT_OVERLAP_WEIGHT * Math.max(objects.length - 1, 0);
@@ -223,7 +224,7 @@ export default function ObjectScrollSection() {
           const enterEase = power4Out(clamp(local / 0.34));
           const exitEase = power2In(exit);
 
-          y = 36 - enterEase * 74 - exitEase * 52;
+          y = isMobile ? 0 : 36 - enterEase * 74 - exitEase * 52;
           opacity = local < 1 ? Math.min(1, power3Out(local / 0.22), 1 - exitEase) : 0;
           scale = Math.min(1.012, 0.975 + backOut(clamp(local / 0.36)) * 0.032) * (1 - exitEase * 0.018);
         } else {
@@ -243,7 +244,7 @@ export default function ObjectScrollSection() {
           const visualEntryGate = power3Out(clamp((local - SEQUENCE_VISUAL_OVERLAP) / 0.24));
           const visualExitGate = 1 - power2In(clamp((local - (1 - SEQUENCE_VISUAL_OVERLAP - 0.16)) / 0.16));
 
-          y = (1 - visualEntry) * 42 - (index === objects.length - 1 ? 0 : exitEase * 28);
+          y = isMobile ? 0 : (1 - visualEntry) * 42 - (index === objects.length - 1 ? 0 : exitEase * 28);
           opacity = active
             ? Math.min(1, power3Out(enter) * 1.12, exitOpacity * 1.18, visualEntryGate, visualExitGate)
             : 0;

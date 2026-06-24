@@ -3523,21 +3523,21 @@ h3 {
   }
 
   .character-copy {
-    align-items: stretch;
-    grid-template-rows: minmax(116px, 23svh) minmax(220px, 1fr) minmax(116px, 23svh);
-    padding: max(76px, calc(env(safe-area-inset-top) + 64px)) 22px max(34px, env(safe-area-inset-bottom));
+    align-items: center;
+    grid-template-rows: 1fr minmax(220px, 38svh) 1fr;
+    padding: max(82px, calc(env(safe-area-inset-top) + 64px)) 22px max(48px, env(safe-area-inset-bottom));
   }
 
   .character-copy h2,
   .character-copy p {
-    background: rgba(255, 255, 255, 0.78);
-    border: 1px solid rgba(120, 146, 160, 0.16);
-    border-radius: 28px;
-    box-shadow: 0 18px 54px rgba(63, 86, 99, 0.08);
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
     display: grid;
     max-width: min(88vw, 520px);
-    min-height: 104px;
-    padding: 16px 18px 14px;
+    min-height: auto;
+    padding: 0;
     place-items: center;
     width: min(88vw, 520px);
   }
@@ -3547,7 +3547,7 @@ h3 {
     font-size: clamp(3rem, 17vw, 5.5rem);
     grid-row: 1;
     line-height: 0.9;
-    margin: 0;
+    margin: 0 0 clamp(26px, 6svh, 54px);
   }
 
   .character-copy p {
@@ -3570,9 +3570,9 @@ h3 {
   }
 
   .reveal-next-object {
-    height: min(42svh, 82vw);
+    height: min(38svh, 78vw);
     top: 50%;
-    width: min(82vw, 42svh);
+    width: min(78vw, 38svh);
   }
 
   .scroll-object {
@@ -3582,24 +3582,27 @@ h3 {
   }
 
   .scroll-object:has(.speaker-feature) .scroll-object-media {
-    max-height: min(30svh, 58vw);
-    max-width: min(58vw, 30svh);
-    transform: translateY(-1svh);
+    max-height: min(26svh, 54vw);
+    max-width: min(54vw, 26svh);
+    transform: none;
+    z-index: 2;
   }
 
   .speaker-feature {
     align-content: center;
-    gap: clamp(18px, 4svh, 30px);
-    grid-template-rows: minmax(154px, 28svh) minmax(170px, 24svh) minmax(138px, 23svh);
-    height: calc(100svh - 74px);
-    padding: max(68px, env(safe-area-inset-top)) 0 max(28px, env(safe-area-inset-bottom));
+    gap: 0;
+    grid-template-rows: minmax(214px, 34svh) minmax(170px, 27svh) minmax(150px, 24svh);
+    height: 100svh;
+    padding: max(74px, env(safe-area-inset-top)) 0 max(40px, env(safe-area-inset-bottom));
     width: min(90vw, 520px);
   }
 
   .speaker-capacity {
     align-self: end;
     gap: 12px;
+    grid-row: 1;
     justify-items: center;
+    transform: translateY(-8svh);
   }
 
   .speaker-capacity > span {
@@ -3609,28 +3612,29 @@ h3 {
   }
 
   .capacity-selector {
-    min-height: 156px;
+    min-height: 132px;
     width: min(74vw, 310px);
   }
 
   .capacity-option {
-    height: 52px;
+    height: 48px;
     left: 50%;
-    top: 52px;
+    top: 42px;
     width: min(70vw, 292px);
   }
 
   .speaker-copy {
-    align-self: start;
-    background: rgba(255, 255, 255, 0.78);
-    border: 1px solid rgba(120, 146, 160, 0.16);
-    border-radius: 28px;
-    box-shadow: 0 18px 54px rgba(63, 86, 99, 0.08);
+    align-self: center;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
     display: grid;
-    min-height: 126px;
-    padding: 16px 18px 14px;
+    grid-row: 3;
+    min-height: auto;
+    padding: 0;
     place-items: center;
-    transform: translateY(calc(var(--speaker-copy-y) + 18svh));
+    transform: translateY(var(--speaker-copy-y));
     width: min(88vw, 520px);
   }
 
@@ -3641,29 +3645,32 @@ h3 {
   }
 
   .scroll-object:has(.nfc-info) .scroll-object-media {
-    max-height: min(28svh, 68vw);
-    max-width: min(68vw, 28svh);
-    transform: translateY(6svh);
+    max-height: min(21svh, 54vw);
+    max-width: min(54vw, 21svh);
+    transform: translateY(2svh);
+    z-index: 2;
   }
 
   .nfc-info {
     align-content: start;
-    gap: 14px;
-    grid-template-rows: minmax(245px, 38svh) minmax(86px, auto) 1fr;
-    height: calc(100svh - 68px);
-    padding-top: max(70px, env(safe-area-inset-top));
+    gap: clamp(12px, 2.2svh, 20px);
+    grid-template-rows: minmax(250px, 36svh) minmax(140px, 22svh) 1fr;
+    height: 100svh;
+    padding-top: max(78px, env(safe-area-inset-top));
+    padding-bottom: max(36px, env(safe-area-inset-bottom));
     width: min(92vw, 560px);
   }
 
   .nfc-copy-stack {
-    align-self: start;
-    background: rgba(255, 255, 255, 0.82);
-    border: 1px solid rgba(120, 146, 160, 0.16);
-    border-radius: 28px;
-    box-shadow: 0 18px 54px rgba(63, 86, 99, 0.08);
-    gap: clamp(18px, 3.4svh, 30px);
-    min-height: 232px;
-    padding: 20px 14px;
+    align-self: end;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    gap: clamp(14px, 2.6svh, 24px);
+    grid-row: 1;
+    min-height: auto;
+    padding: 0;
     place-content: center;
     width: 100%;
   }
@@ -3686,8 +3693,9 @@ h3 {
   .nfc-certificate {
     align-self: start;
     gap: 8px;
+    grid-row: 3;
     height: auto;
-    margin-top: min(6svh, 40px);
+    margin-top: clamp(28px, 5svh, 46px);
     width: 100%;
   }
 

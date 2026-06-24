@@ -131,6 +131,7 @@ export default function HeroReveal() {
       const homeTwoEnter = power3Out(clamp(progress / 0.16));
       const homeTwoExit = power2In(clamp((progress - whiteFadeStart) / whiteFadeDuration));
       const whiteFade = power3Out((progress - whiteFadeStart) / whiteFadeDuration);
+      const isMobile = window.matchMedia("(max-width: 920px)").matches;
 
       section.style.setProperty("--reveal-progress", progress.toFixed(4));
       section.style.setProperty("--home-one-opacity", (1 - homeOneFade).toFixed(4));
@@ -147,7 +148,14 @@ export default function HeroReveal() {
         const textHoldStart = textStart + textFadeIn;
         const textHoldEnd = textHoldStart + textHold;
         const end = textHoldEnd + textFadeOut;
-        const image = imageMotion(progress, start, start + imageFadeIn, textHoldEnd, end, index === characterBeats.length - 1);
+        const image = imageMotion(
+          progress,
+          start,
+          start + imageFadeIn,
+          textHoldEnd,
+          end,
+          isMobile || index === characterBeats.length - 1
+        );
         const entranceOpacity = character.id === "billy" && progress < start + imageFadeIn ? characterEntry : 0;
         const opacity = Math.max(entranceOpacity, image.opacity);
         const copy = textMotion(progress, textStart, textHoldStart, textHoldEnd, end);
