@@ -31,7 +31,7 @@ const ScrollImageSequence = forwardRef(function ScrollImageSequence(
   const firstFrame = useMemo(() => fallbackSrc || getFrameSrc(1), [fallbackSrc, getFrameSrc]);
 
   useEffect(() => {
-    const query = window.matchMedia("(max-width: 720px), (prefers-reduced-motion: reduce)");
+    const query = window.matchMedia("(prefers-reduced-motion: reduce)");
     const updateFallback = () => setUseFallback(query.matches);
 
     updateFallback();

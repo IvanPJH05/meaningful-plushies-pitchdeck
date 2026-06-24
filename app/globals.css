@@ -3575,6 +3575,22 @@ h3 {
     width: min(78vw, 38svh);
   }
 
+  .reveal-character-billy {
+    transform: translateY(var(--billy-y)) scale(1.72);
+  }
+
+  .reveal-character-tootsie {
+    transform: translateY(var(--tootsie-y)) scale(1.72);
+  }
+
+  .reveal-character-dragon {
+    transform: translateY(var(--dragon-y)) scale(1.72);
+  }
+
+  .reveal-character-hunnie {
+    transform: translateY(var(--hunnie-y)) scale(1.9);
+  }
+
   .scroll-object {
     background: transparent;
     height: 100svh;
@@ -3591,7 +3607,7 @@ h3 {
   .speaker-feature {
     align-content: center;
     gap: 0;
-    grid-template-rows: minmax(214px, 34svh) minmax(170px, 27svh) minmax(150px, 24svh);
+    grid-template-rows: minmax(214px, 32svh) minmax(170px, 28svh) minmax(150px, 24svh);
     height: 100svh;
     padding: max(74px, env(safe-area-inset-top)) 0 max(40px, env(safe-area-inset-bottom));
     width: min(90vw, 520px);
@@ -3602,7 +3618,7 @@ h3 {
     gap: 12px;
     grid-row: 1;
     justify-items: center;
-    transform: translateY(-8svh);
+    transform: translateY(-13svh);
   }
 
   .speaker-capacity > span {
@@ -3612,14 +3628,14 @@ h3 {
   }
 
   .capacity-selector {
-    min-height: 132px;
+    min-height: 178px;
     width: min(74vw, 310px);
   }
 
   .capacity-option {
-    height: 48px;
+    height: 46px;
     left: 50%;
-    top: 42px;
+    top: 78px;
     width: min(70vw, 292px);
   }
 
@@ -3634,7 +3650,7 @@ h3 {
     min-height: auto;
     padding: 0;
     place-items: center;
-    transform: translateY(var(--speaker-copy-y));
+    transform: translateY(calc(var(--speaker-copy-y) - 6svh));
     width: min(88vw, 520px);
   }
 
@@ -3658,6 +3674,7 @@ h3 {
     height: 100svh;
     padding-top: max(78px, env(safe-area-inset-top));
     padding-bottom: max(36px, env(safe-area-inset-bottom));
+    transform: translate(-50%, -50%) translateY(calc(var(--nfc-info-y) + var(--nfc-mobile-scroll, 0px)));
     width: min(92vw, 560px);
   }
 
