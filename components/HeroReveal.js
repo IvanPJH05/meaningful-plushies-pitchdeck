@@ -109,6 +109,7 @@ const characterBeats = [
     name: "Hunnie",
     lines: ["The new standard", "for plushies"],
     image: "/assets/hunnie.png",
+    mobileImage: "/assets/hunnie-mobile.png",
   },
 ];
 
@@ -234,13 +235,17 @@ export default function HeroReveal() {
         </picture>
         <div className="reveal-next-object">
           {characterBeats.map((character) => (
-            <img
-              className={`reveal-character reveal-character-${character.id}`}
-              src={assetUrl(character.image)}
-              alt=""
-              key={character.id}
-              aria-hidden="true"
-            />
+            <picture key={character.id}>
+              {character.mobileImage ? (
+                <source media="(max-width: 920px)" srcSet={assetUrl(character.mobileImage)} />
+              ) : null}
+              <img
+                className={`reveal-character reveal-character-${character.id}`}
+                src={assetUrl(character.image)}
+                alt=""
+                aria-hidden="true"
+              />
+            </picture>
           ))}
         </div>
         <div className="reveal-character-copy" aria-live="polite">

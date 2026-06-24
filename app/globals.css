@@ -3588,7 +3588,7 @@ h3 {
   }
 
   .reveal-character-hunnie {
-    transform: translateY(var(--hunnie-y)) scale(1.9);
+    transform: translateY(var(--hunnie-y)) scale(0.98);
   }
 
   .scroll-object {
