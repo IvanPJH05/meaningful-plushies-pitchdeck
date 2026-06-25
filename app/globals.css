@@ -3616,7 +3616,7 @@ h3 {
   .speaker-feature {
     align-content: center;
     gap: 0;
-    grid-template-rows: minmax(214px, 32svh) minmax(170px, 28svh) minmax(150px, 24svh);
+    grid-template-rows: minmax(210px, 31svh) minmax(176px, 28svh) minmax(160px, 25svh);
     height: 100svh;
     padding: max(74px, env(safe-area-inset-top)) 0 max(40px, env(safe-area-inset-bottom));
     width: min(90vw, 520px);
@@ -3627,7 +3627,7 @@ h3 {
     gap: 12px;
     grid-row: 1;
     justify-items: center;
-    transform: translateY(-13svh);
+    transform: translateY(-8svh);
   }
 
   .speaker-capacity > span {
@@ -3659,7 +3659,7 @@ h3 {
     min-height: auto;
     padding: 0;
     place-items: center;
-    transform: translateY(calc(var(--speaker-copy-y) - 6svh));
+    transform: translateY(calc(var(--speaker-copy-y) - 3svh));
     width: min(88vw, 520px);
   }
 

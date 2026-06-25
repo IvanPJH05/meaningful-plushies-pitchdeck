@@ -100,13 +100,13 @@ function setSpeakerFeatureProgress(node, progress, opacity) {
   if (!node) return;
 
   const selectedIndex = Math.round(clamp(progress) * 2);
-  const copyIn = expoOut(clamp((progress - 0.12) / 0.22));
-  const copyOpacity = opacity * copyIn;
-  const copyY = (1 - copyIn) * 34;
+  const copyIn = expoOut(clamp(progress / 0.16));
+  const copyOpacity = copyIn;
+  const copyY = (1 - copyIn) * 18;
   const floatProgress = sineInOut(progress);
 
   node.style.setProperty("--feature-progress", progress.toFixed(4));
-  node.style.setProperty("--feature-opacity", opacity.toFixed(4));
+  node.style.setProperty("--feature-opacity", "1");
   node.style.setProperty("--speaker-copy-opacity", copyOpacity.toFixed(4));
   node.style.setProperty("--speaker-copy-y", `${copyY.toFixed(2)}px`);
   node.dataset.capacity = String(selectedIndex);
@@ -245,8 +245,9 @@ export default function ObjectScrollSection() {
           const visualExitGate = 1 - power2In(clamp((local - (1 - SEQUENCE_VISUAL_OVERLAP - 0.16)) / 0.16));
 
           y = isMobile ? 0 : (1 - visualEntry) * 42 - (index === objects.length - 1 ? 0 : exitEase * 28);
+          const composedEntryGate = object.feature && isMobile ? power3Out(clamp(local / 0.16)) : 1;
           opacity = active
-            ? Math.min(1, power3Out(enter) * 1.12, exitOpacity * 1.18, visualEntryGate, visualExitGate)
+            ? Math.min(1, power3Out(enter) * 1.12, exitOpacity * 1.18, visualEntryGate, visualExitGate, composedEntryGate)
             : 0;
           scale = Math.min(1.012, 0.955 + settle * 0.048) * (1 - exitEase * 0.025);
 
