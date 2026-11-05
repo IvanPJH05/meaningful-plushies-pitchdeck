@@ -258,6 +258,8 @@ export default function ObjectScrollSection() {
           }
 
           if (object.info) {
+            const mobileScroll = isMobile ? -power3Out(clamp((scrub - 0.62) / 0.28)) * 300 : 0;
+            node.style.setProperty("--nfc-mobile-scroll", `${mobileScroll.toFixed(2)}px`);
             setNfcInfoProgress(node, scrub, opacity);
           }
         }
@@ -373,13 +375,6 @@ export default function ObjectScrollSection() {
                       </div>
                     ))}
                   </div>
-                  <img
-                    className="nfc-certificate-preview"
-                    src="/birth-certificate-landscape.png"
-                    width="1000"
-                    height="560"
-                    alt="Sample Meaningful Plushies birth certificate in landscape, with Tootsie’s portrait on the left and certificate details on the right"
-                  />
                   <div className="nfc-certificate">
                     <h3>
                       {object.info.certificateTitle.map((line) => (

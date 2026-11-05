@@ -720,17 +720,6 @@ select {
   will-change: opacity, transform;
 }
 
-.nfc-certificate-preview {
-  border-radius: 12px;
-  top: calc(50% + 24svh);
-  height: auto;
-  left: 50%;
-  opacity: var(--nfc-certificate-opacity);
-  position: absolute;
-  transform: translateX(-50%);
-  width: min(78vw, 38svh, 420px);
-}
-
 .nfc-certificate h3 {
   color: #7892a0;
   font-family: inherit;
@@ -3681,63 +3670,82 @@ h3 {
   }
 
   .scroll-object:has(.nfc-info) .scroll-object-media {
-    max-height: min(24svh, 60vw);
-    max-width: min(60vw, 24svh);
-    transform: none;
+    max-height: min(21svh, 54vw);
+    max-width: min(54vw, 21svh);
+    transform: translateY(2svh);
     z-index: 2;
   }
 
   .nfc-info {
     align-content: start;
+    gap: clamp(12px, 2.2svh, 20px);
+    grid-template-rows: minmax(250px, 36svh) minmax(140px, 22svh) 1fr;
     height: 100svh;
-    padding-top: max(clamp(50px, 11svh, 92px), env(safe-area-inset-top));
-    transform: translate(-50%, -50%);
-    width: min(90vw, 560px);
+    padding-top: max(78px, env(safe-area-inset-top));
+    padding-bottom: max(36px, env(safe-area-inset-bottom));
+    transform: translate(-50%, -50%) translateY(calc(var(--nfc-info-y) + var(--nfc-mobile-scroll, 0px)));
+    width: min(92vw, 560px);
   }
 
   .nfc-copy-stack {
-    align-self: start;
+    align-self: end;
     background: transparent;
     border: 0;
     border-radius: 0;
     box-shadow: none;
-    gap: clamp(10px, 2svh, 20px);
+    gap: clamp(14px, 2.6svh, 24px);
+    grid-row: 1;
     min-height: auto;
     padding: 0;
-    text-align: left;
+    place-content: center;
     width: 100%;
   }
 
   .nfc-info-panel {
-    gap: 5px;
+    gap: 8px;
   }
 
   .nfc-info-panel h3 {
-    font-size: clamp(1.45rem, min(8vw, 4.8svh), 3.45rem);
+    font-size: clamp(2rem, 10vw, 3.45rem);
     line-height: 0.96;
   }
 
-  .nfc-info-panel h3 span {
-    display: inline;
-  }
-
-  .nfc-info-panel h3 span + span::before {
-    content: " ";
-  }
-
   .nfc-info-panel p {
-    font-size: clamp(0.9rem, min(4.5vw, 2.8svh), 1.35rem);
+    font-size: clamp(1rem, 4.8vw, 1.35rem);
     line-height: 1.12;
+    text-wrap: balance;
   }
 
   .nfc-certificate {
-    display: none;
+    align-self: start;
+    gap: 8px;
+    grid-row: 3;
+    height: auto;
+    margin-top: clamp(28px, 5svh, 46px);
+    width: 100%;
   }
 
-  .nfc-certificate-preview {
-    bottom: max(28px, env(safe-area-inset-bottom));
-    top: auto;
-    width: min(78vw, 48svh, 420px);
+  .nfc-certificate h3 {
+    font-size: clamp(1rem, 4.5vw, 1.45rem);
+    line-height: 0.98;
+  }
+
+  .nfc-click-pills {
+    --nfc-pill-active-height: 72px;
+    --nfc-pill-rest-height: 52px;
+    gap: 8px;
+  }
+
+  .nfc-click-pill {
+    padding: 7px 14px;
+  }
+
+  .nfc-click-pill span {
+    font-size: clamp(0.9rem, 4.2vw, 1.08rem);
+  }
+
+  .nfc-click-pill strong {
+    font-size: clamp(0.98rem, 4.5vw, 1.22rem);
   }
 
   .reviews-slider-arrow-left {
